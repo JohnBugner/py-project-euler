@@ -5,31 +5,15 @@ we can see that the 6th prime is 13.
 What is the 10001st prime number?
 """
 
-import math
+import extra
+
+import itertools
 
 def main():
-    print(primes(6)[-1]) # 13
-    print(primes(10_001)[-1])
+    print(nthPrimeNumber(6)) # 13
+    print(nthPrimeNumber(10_001))
 
-def primes(indexLimit):
-    ns = [2,3]
-
-    while len(ns) < indexLimit:
-        n = ns[-1] + 2
-
-        while True:
-            if isPrime(n):
-                ns.append(n)
-                break
-            else:
-                n += 2
-
-    return ns
-
-def isPrime(n):
-    if n <= 1:
-        return False
-    else:
-        return not(any(map(lambda d: n % d == 0, [2] + list(range(3, math.isqrt(n) + 1, 2)))))
+def nthPrimeNumber(n):
+    return list(itertools.islice(extra.primes(), n))[-1]
 
 main()

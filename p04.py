@@ -12,12 +12,12 @@ def main():
     print(largestPalindromeOfProductOfTwoNDigitNumbers(3))
 
 def largestPalindromeOfProductOfTwoNDigitNumbers(n):
-    return max(filter(isPalindrome, map(lambda t: t[0] * t[1], itertools.combinations(_NDigitNumbers(n), 2))))
+    return max(filter(isPalindrome, map(lambda t: t[0] * t[1], itertools.combinations(nDigitNumbers(n), 2))))
 
 def isPalindrome(n):
     return str(n) == str(n)[::-1]
 
-def _NDigitNumbers(n):
+def nDigitNumbers(n):
     return range(10**(n-1), 10**n)
 
 main()

@@ -8,28 +8,15 @@ By considering the terms in the Fibonacci sequence whose values do not exceed
 four million, find the sum of the even-valued terms.
 """
 
+import extra
+
+import itertools
+
 def main():
     print(sumOfEvenFibonacciNumbers(100)) # 44
     print(sumOfEvenFibonacciNumbers(4_000_000))
 
 def sumOfEvenFibonacciNumbers(limit):
-    return sum(filter(isEven, fibonaccis(limit)))
-
-def isEven(n):
-    return n % 2 == 0
-
-# oeis.org/A000045
-def fibonaccis(limit):
-    ns = [0,1]
-
-    while True:
-        n = ns[-2] + ns[-1]
-
-        if n <= limit:
-            ns.append(n)
-        else:
-            break
-
-    return ns
+    return sum(filter(extra.isEven, itertools.takewhile(lambda n: n <= limit, extra.fibonaccis())))
 
 main()

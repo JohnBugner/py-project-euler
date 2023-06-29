@@ -27,7 +27,7 @@ Find the thirteen adjacent digits in the 1000-digit number
 that have the greatest product. What is the value of this product?
 """
 
-import functools
+import extra
 
 def main():
     s = " \
@@ -52,21 +52,12 @@ def main():
     05886116467109405077541002256983155200055935729725 \
     71636269561882670428252483600823257530420752963450 \
     "
-    digits = list(map(int, filter(isDigit, s)))
+    digits = list(map(int, filter(str.isdigit, s)))
 
     print(largestProductOfNAdjacentDigits(digits, 4)) # 5832
     print(largestProductOfNAdjacentDigits(digits, 13))
 
-def isDigit(c):
-    return (c >= '0') and (c <= '9')
-
 def largestProductOfNAdjacentDigits(digits, n):
-    return max(map(product, windows(digits, n)))
-
-def product(xs):
-    return functools.reduce(int.__mul__, xs)
-
-def windows(xs, length):
-    return [xs[i:i+length] for i in range(len(xs)-length+1)]
+    return max(map(extra.product, extra.windows(digits, n)))
 
 main()
