@@ -14,8 +14,10 @@ import extra
 import itertools
 
 def main():
-    print(productsOfPythagoreanTriplesWithSumOfN(12)) # 60
-    print(productsOfPythagoreanTriplesWithSumOfN(1000))
+    for i in [12, 1000]:
+        print(productsOfPythagoreanTriplesWithSumOfN(i))
+        # 60
+        # 31_875_000
 
 def productsOfPythagoreanTriplesWithSumOfN(n):
     a = list(itertools.combinations(range(1, n), 3))

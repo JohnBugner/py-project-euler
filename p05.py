@@ -11,8 +11,10 @@ import extra
 import multiset
 
 def main():
-    print(smallestNumberDivisibleByNumbers(10)) # 2520
-    print(smallestNumberDivisibleByNumbers(20))
+    for i in [10, 20]:
+        print(smallestNumberDivisibleByNumbers(i))
+        # 2520
+        # 232_792_560
 
 def smallestNumberDivisibleByNumbers(limit):
     return extra.product(commonPrimeFactors(range(1, limit + 1)))

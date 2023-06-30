@@ -13,8 +13,10 @@ import extra
 import itertools
 
 def main():
-    print(sumOfEvenFibonacciNumbers(100)) # 44
-    print(sumOfEvenFibonacciNumbers(4_000_000))
+    for i in [100, 4_000_000]:
+        print(sumOfEvenFibonacciNumbers(i))
+        # 44
+        # 4_613_732
 
 def sumOfEvenFibonacciNumbers(limit):
     return sum(filter(extra.isEven, itertools.takewhile(lambda n: n <= limit, extra.fibonaccis())))

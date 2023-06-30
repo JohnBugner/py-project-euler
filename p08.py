@@ -54,8 +54,10 @@ def main():
     "
     digits = list(map(int, filter(str.isdigit, s)))
 
-    print(largestProductOfNAdjacentDigits(digits, 4)) # 5832
-    print(largestProductOfNAdjacentDigits(digits, 13))
+    for i in [4, 13]:
+        print(largestProductOfNAdjacentDigits(digits, i))
+        # 5832
+        # 23_514_624_000
 
 def largestProductOfNAdjacentDigits(digits, n):
     return max(map(extra.product, extra.windows(digits, n)))

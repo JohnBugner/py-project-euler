@@ -7,9 +7,11 @@ What is the largest prime factor of the number 600851475143?
 import extra
 
 def main():
-    print(largestPrimeFactor(49)) # 7
-    print(largestPrimeFactor(13_195)) # 29
-    print(largestPrimeFactor(600_851_475_143))
+    for i in [49, 13_195, 600_851_475_143]:
+        print(largestPrimeFactor(i))
+        # 7
+        # 29
+        # 6857
 
 def largestPrimeFactor(n):
     return max(extra.primeFactors(n))

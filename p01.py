@@ -6,8 +6,10 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 def main():
-    print(sumOfMultiplesOf3Or5(10)) # 23
-    print(sumOfMultiplesOf3Or5(1000))
+    for i in [10, 1000]:
+        print(sumOfMultiplesOf3Or5(i))
+        # 23
+        # 233_168
 
 def sumOfMultiplesOf3Or5(limit):
     return sum(filter(isMultipleOf3Or5, range(limit)))

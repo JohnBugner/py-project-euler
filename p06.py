@@ -17,8 +17,10 @@ first one hundred natural numbers and the square of the sum.
 import extra
 
 def main():
-    print(diffBetweenSquareOfSumsAndSumOfSquares(10)) # 2640
-    print(diffBetweenSquareOfSumsAndSumOfSquares(100))
+    for i in [10, 100]:
+        print(diffBetweenSquareOfSumsAndSumOfSquares(i))
+        # 2640
+        # 25_164_150
 
 def diffBetweenSquareOfSumsAndSumOfSquares(limit):
     return squareOfSums(limit + 1) - sumOfSquares(limit + 1)

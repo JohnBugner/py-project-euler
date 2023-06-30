@@ -9,8 +9,10 @@ import extra
 import itertools
 
 def main():
-    print(sumOfPrimes(10)) # 17
-    print(sumOfPrimes(2_000_000))
+    for i in [10, 2_000_000]:
+        print(sumOfPrimes(i))
+        # 17
+        # 142_913_828_922
 
 def sumOfPrimes(limit):
     return sum(itertools.takewhile(lambda n: n < limit, extra.primes()))

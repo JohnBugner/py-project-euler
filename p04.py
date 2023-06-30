@@ -8,8 +8,10 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 import itertools
 
 def main():
-    print(largestPalindromeOfProductOfTwoNDigitNumbers(2)) # 9009
-    print(largestPalindromeOfProductOfTwoNDigitNumbers(3))
+    for i in [2, 3]:
+        print(largestPalindromeOfProductOfTwoNDigitNumbers(i))
+        # 9009
+        # 906_609
 
 def largestPalindromeOfProductOfTwoNDigitNumbers(n):
     return max(filter(isPalindrome, map(lambda t: t[0] * t[1], itertools.combinations(nDigitNumbers(n), 2))))

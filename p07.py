@@ -10,8 +10,10 @@ import extra
 import itertools
 
 def main():
-    print(nthPrimeNumber(6)) # 13
-    print(nthPrimeNumber(10_001))
+    for i in [6, 10_001]:
+        print(nthPrimeNumber(i))
+        # 13
+        # 104_743
 
 def nthPrimeNumber(n):
     return list(itertools.islice(extra.primes(), n))[-1]
